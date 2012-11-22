@@ -234,6 +234,7 @@ func fetch() bool {
 type crlSetHeader struct {
 	Sequence   int
 	NumParents int
+	NotAfter int
 }
 
 func dump(filename string, certificateFilename string) bool {
@@ -293,6 +294,7 @@ func dump(filename string, certificateFilename string) bool {
 	if len(spki) == 0 {
 		fmt.Printf("Sequence: %d\n", header.Sequence)
 		fmt.Printf("Parents: %d\n", header.NumParents)
+		fmt.Printf("NotAfter: %d\n", header.NotAfter)
 		fmt.Printf("\n")
 	}
 
